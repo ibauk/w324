@@ -1,0 +1,94 @@
+:root {
+  --nav-back: black;
+  --nav-text: white;
+  --nav-hilite-back: lightgray;
+  --nav-hilite-text: black;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 880px; /* Width of bannerroad.jpg */
+  margin: auto;
+  font-family: Verdana, Arial, Helvetica, sans-serif, Times, "Times New Roman";
+}
+
+#topbannerdiv {
+  max-width: 100vh;
+  height: 15vh;
+  background-image: url(../images/bannerroad.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  display: block;
+}
+nav {
+  background-color: var(--nav-back);
+  color: var(--nav-text);
+}
+nav ul,
+nav ul ul {
+  display: flex;
+  padding: 0.5em;
+  gap: 2em;
+  ;
+}
+
+nav .l-one {
+  position: relative;
+  display: inline-block;
+}
+nav a {
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+nav .l-one > a {
+  color: var(--nav-text);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+nav .l-two {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 10rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+  background-color: var(--nav-back);;
+}
+
+nav .l-one:hover > .l-two,
+nav .l-two:hover {
+  visibility: visible;
+  opacity: 1;
+  display: grid;
+  gap: 3px;
+  z-index: 1;
+  padding: 2px;
+}
+
+nav .l-two li {
+  text-align: center;
+  border-bottom: 1px solid red;
+}
+nav .l-two a {
+  color: var(--nav-text);
+}
+nav .l-two li:hover a {
+  background-color: var(--nav-hilite-back);
+  color: var(--nav-hilite-text);
+  font-weight: bold;
+  width: 100%;
+}
